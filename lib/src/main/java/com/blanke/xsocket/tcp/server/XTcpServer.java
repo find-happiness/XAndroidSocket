@@ -170,7 +170,7 @@ public class XTcpServer extends BaseXSocket implements TcpClientListener {
     }
 
     @Override
-    public void onDisconnected(XTcpClient client, String msg, Exception e) {
+    public void onDisconnected(XTcpClient client, String msg, Throwable e) {
         notifyTcpClientClosed(client, msg, e);
     }
 
@@ -326,7 +326,7 @@ public class XTcpServer extends BaseXSocket implements TcpClientListener {
         }
     }
 
-    private void notifyTcpClientClosed(final XTcpClient client, final String msg, final Exception e) {
+    private void notifyTcpClientClosed(final XTcpClient client, final String msg, final Throwable e) {
         for (TcpServerListener wr : mTcpServerListeners) {
             final TcpServerListener l = wr;
             if (l != null) {

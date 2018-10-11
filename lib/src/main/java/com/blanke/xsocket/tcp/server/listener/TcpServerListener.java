@@ -20,7 +20,7 @@ public interface TcpServerListener {
 
     void onValidationFail(XTcpServer server, XTcpClient client, TcpMsg tcpMsg);
 
-    void onClientClosed(XTcpServer server, XTcpClient tcpClient, String msg, Exception e);
+    void onClientClosed(XTcpServer server, XTcpClient tcpClient, String msg, Throwable e);
 
-    void onServerClosed(XTcpServer server, String msg, Exception e);
+    void onServerClosed(XTcpServer server, String msg, Throwable e);
 }

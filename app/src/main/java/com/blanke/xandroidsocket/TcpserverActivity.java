@@ -112,12 +112,12 @@ public class TcpserverActivity extends AppCompatActivity implements View.OnClick
     }
 
     @Override
-    public void onClientClosed(XTcpServer server, XTcpClient tcpClient, String msg, Exception e) {
+    public void onClientClosed(XTcpServer server, XTcpClient tcpClient, String msg, Throwable e) {
         addMsg("客户端连接断开 " + tcpClient.getTargetInfo().getIp() + msg + e);
     }
 
     @Override
-    public void onServerClosed(XTcpServer server, String msg, Exception e) {
+    public void onServerClosed(XTcpServer server, String msg, Throwable e) {
         addMsg("服务器关闭 " + server + msg + e);
     }
 }

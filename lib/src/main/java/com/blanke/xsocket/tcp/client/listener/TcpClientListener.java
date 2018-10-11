@@ -11,7 +11,7 @@ public interface TcpClientListener {
 
     void onSended(XTcpClient client, TcpMsg tcpMsg);
 
-    void onDisconnected(XTcpClient client, String msg, Exception e);
+    void onDisconnected(XTcpClient client, String msg, Throwable e);
 
     void onReceive(XTcpClient client, TcpMsg tcpMsg);
 
@@ -30,7 +30,7 @@ public interface TcpClientListener {
         }
 
         @Override
-        public void onDisconnected(XTcpClient client, String msg, Exception e) {
+        public void onDisconnected(XTcpClient client, String msg, Throwable e) {
 
         }
 

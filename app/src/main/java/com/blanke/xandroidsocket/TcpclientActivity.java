@@ -111,7 +111,7 @@ public class TcpclientActivity extends AppCompatActivity implements View.OnClick
     }
 
     @Override
-    public void onDisconnected(XTcpClient client, String msg, Exception e) {
+    public void onDisconnected(XTcpClient client, String msg, Throwable e) {
         addMsg(client.getTargetInfo().getIp() + "断开连接 " + msg + e);
     }
 
