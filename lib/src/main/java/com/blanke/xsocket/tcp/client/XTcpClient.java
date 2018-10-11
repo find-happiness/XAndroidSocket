@@ -137,7 +137,7 @@ public class XTcpClient extends BaseXSocket {
   }
 
   public synchronized Socket getSocket() {
-    if (mSocket == null || isDisconnected() || !mSocket.isConnected()) {
+    if (mSocket == null || isDisconnected() || !mSocket.isConnected() || mSocket.isClosed()) {
       mSocket = new Socket();
       try {
         mSocket.setSoTimeout((int) mTcpConnConfig.getReceiveTimeout());
@@ -166,6 +166,11 @@ public class XTcpClient extends BaseXSocket {
     if (isDisconnected()) {
       return;
     }
+
+    if (msgQueue != null) {
+      msgQueue.clear();
+    }
+
     setClientState(ClientState.Disconnected);
     disposeConnectionThread();
     disposeSendThread();

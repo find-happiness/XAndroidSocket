@@ -5,7 +5,7 @@ android {
     buildToolsVersion "27.0.3"
 
     defaultConfig {
-        applicationId "com.blanke.xandroidsocket"
+        applicationId "com.happiness.xandroidsocket"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
